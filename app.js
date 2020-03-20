@@ -33,3 +33,10 @@ const data=[
     }
 
 ]
+
+const profiles=profileiterator(data);
+
+nextprofile();
+
+//Next Event
+document.getElementById('next').addEventListener('click',nextprofile);
