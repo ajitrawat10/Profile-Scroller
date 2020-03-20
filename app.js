@@ -59,3 +59,16 @@ document.getElementById('next').addEventListener('click',nextprofile);
             window.location.reload();
         }
     }
+//Profile Iterator
+function profileiterator(profiles){
+    let nextindex=0;
+
+    return {
+        next:function(){
+            return nextindex < profiles.length?
+            {value:profiles[nextindex++],done:false}:
+            {done:true}
+        }
+    }
+}
+
