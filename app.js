@@ -40,3 +40,22 @@ nextprofile();
 
 //Next Event
 document.getElementById('next').addEventListener('click',nextprofile);
+    //Next Profile Display
+        function nextprofile(){
+        const currentprofile=profiles.next().value;
+        if(currentprofile!==undefined){
+        document.getElementById('profiledisplay').innerHTML=`
+        <ul class="list-group">
+        <li class="list-group-item">Name:${currentprofile.name}</li>
+        <li class="list-group-item">Age:${currentprofile.age}</li>
+        <li class="list-group-item">Location:${currentprofile.location}</li>
+        <li class="list-group-item">Gender:${currentprofile.gender} </li>
+        </ul>
+        `;
+        document.getElementById('imagedisplay').innerHTML=`<img src="${currentprofile.image}">`
+        }
+        else{
+            //No more Profiles
+            window.location.reload();
+        }
+    }
